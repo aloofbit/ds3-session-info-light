@@ -1,12 +1,6 @@
 {
 Author: Aloofbit
 Hi, this is a modified version of the session info UI made by inuNorii
-
-  Author: inuNorii
-  Desc: Shows parts of Session Info in a separate window
-        made with CEs Form Editor and some bad lua
-
-        no booli
 }
 [ENABLE]
 {$lua}
@@ -16,7 +10,8 @@ fileLocation = "C:/Users/canyon/Desktop/store/session_info.txt"
 playerAddresses = { "38", "70", "A8", "E0", "XB" }
 playersOutput = {}
 -- place bad words to star out here
-badwords = {"fuck"}
+badwords = {}
+
 
 function SessionInfoUpdate(timer)
   playersOutput = {}
