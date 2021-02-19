@@ -1,16 +1,22 @@
 {
 Author: Aloofbit
 Hi, this is a modified version of the session info UI made by inuNorii
+
+  Author: inuNorii
+  Desc: Shows parts of Session Info in a separate window
+        made with CEs Form Editor and some bad lua
+
+        no booli
 }
 [ENABLE]
 {$lua}
 if syntaxcheck then return end
-SessionInfoLight.Show()
+-- SessionInfoLight.Show()
 fileLocation = "C:/Users/canyon/Desktop/store/session_info.txt"
 playerAddresses = { "38", "70", "A8", "E0", "XB" }
 playersOutput = {}
 -- place bad words to star out here
-badwords = {""}
+badwords = {"fuck"}
 
 function SessionInfoUpdate(timer)
   playersOutput = {}
@@ -26,7 +32,7 @@ function SessionInfoUpdate(timer)
   singleLine = ""
   for i=1, 5, 1 do
      local text =((playersOutput[i] ~= nil) and playersOutput[i] or nil)
-     control_setCaption(SessionInfoLight["P"..i.."_Text"], text)
+     -- control_setCaption(SessionInfoLight["P"..i.."_Text"], text)
      if (text ~= nil) then
        singleLine = singleLine .. ((i > 1) and " | " or " ") .. text
      end
@@ -55,7 +61,7 @@ SessionInfoTimer.setEnabled(true)
 [DISABLE]
 {$lua}
 if syntaxcheck then return end
-SessionInfoLight.Hide()
+-- SessionInfoLight.Hide()
 
 if(SessionInfoTimer ~= nil) then
 SessionInfoTimer.destroy()
